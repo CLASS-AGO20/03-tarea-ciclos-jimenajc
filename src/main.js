@@ -25,13 +25,32 @@ export default class App {
             } else {
                 suma = suma + 1 / i;
             }
-            
+
             i++;
         }
 
         return suma;
     }
 
+    esPrimo(numero){
+
+        let i  =  1;
+        let divisores = 0;
+        do{
+            if( numero % i == 0){
+                divisores++
+            }
+            i++
+
+        } while(i <= numero);
+
+        if (divisores == 2 ){
+            return true;
+        } else {
+            return false;
+        }
+
+    }
 }
 
 
@@ -49,3 +68,10 @@ console.log(app.sumatoriaSerieDos(2));
 console.log(app.sumatoriaSerieDos(3));
 console.log(app.sumatoriaSerieDos(4));
 console.log(app.sumatoriaSerieDos(5));
+
+console.log(app.esPrimo(2));
+console.log(app.esPrimo(11));
+console.log(app.esPrimo(17));
+console.log(app.esPrimo(94));
+console.log(app.esPrimo(32));
+console.log(app.esPrimo(27));
